@@ -83,8 +83,8 @@
   }
 
   .nav-links li {
-    font-size: 60px; /* Increase font size for mobile */
-    padding: 40px 0;
+    font-size: 40px; /* Increase font size for mobile */
+    padding: 20px 0;
     transition: color 0.3s ease-in-out;
   }
 }
