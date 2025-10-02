@@ -3,7 +3,7 @@ import { Typography } from "antd";
 const { Title, Paragraph } = Typography;
 
 const ParagraphStyles = {
-  fontSize: "1.2rem",
+  fontSize: "1.4rem",
   color: "#FFF", // Dark gray color
   fontWeight: "100",
   textAlign: "left" as const,
@@ -22,7 +22,7 @@ const DescriptionSection = () => (
     </Title>
     <Title
       ellipsis
-      level={3}
+      level={2}
       style={{
         color: "#FFF", // Dark gray color
         fontWeight: "400",
@@ -31,20 +31,7 @@ const DescriptionSection = () => (
       Web Developer and Data Analyst
     </Title>
     <Paragraph style={ParagraphStyles}>
-      Hi! I’m a passionate Web Developer and Data Analyst. I enjoy building
-      modern, responsive web applications and uncovering insights from data to
-      drive impactful decisions. I thrive at the intersection of development and
-      analytics, combining technical skills with business understanding to
-      deliver full-stack solutions. I have hands-on experience in frontend
-      development using React.js, TypeScript, and modern JavaScript. On the
-      backend, I work with Node.js and Express.js. I’ve also built applications
-      that integrate with databases like MongoDB, SQL Server, and PostgreSQL. As
-      a data analyst, I use Power BI and Python (with libraries like pandas and
-      matplotlib) to explore data, generate reports, and present meaningful
-      visualizations. I'm passionate about turning data into knowledge and
-      building applications that make an impact. Whether it’s crafting intuitive
-      user interfaces or transforming raw data into insights, I’m always eager
-      to learn and take on new challenges.
+      I’m a Web Developer and Data Analyst passionate about building modern, responsive applications and uncovering insights from data. I have experience in frontend development with React.js, TypeScript, and JavaScript, and backend development with Node.js, Express.js, and databases like MongoDB, SQL Server, and PostgreSQL. As a data analyst, I use Power BI and Python (pandas, matplotlib) to analyze data and create impactful visualizations. I enjoy combining technical skills with business understanding to deliver full-stack solutions that make a difference.
     </Paragraph>
   </div>
 );

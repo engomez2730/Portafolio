@@ -28,16 +28,26 @@
   .main {
     flex-direction: column;
     padding: 20px;
+    height: auto;
+    min-height: 100vh;
   }
 
   .main-contect {
     flex-direction: column;
     padding: 20px;
+    min-height: 80vh;
+    justify-content: center;
   }
 
   .main-description,
   .main-photo {
     width: 100%;
     margin-bottom: 20px;
+  }
+
+  .main-description {
+    max-height: 70vh;
+    overflow-y: auto;
+    padding-right: 10px;
   }
 }
