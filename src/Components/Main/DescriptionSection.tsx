@@ -6,7 +6,7 @@ const ParagraphStyles = {
   fontSize: "1.2rem",
   color: "#FFF", // Dark gray color
   fontWeight: "100",
-  textAlign: "left",
+  textAlign: "left" as const,
 };
 
 const DescriptionSection = () => (
