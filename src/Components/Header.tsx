@@ -8,10 +8,12 @@ const Header = function () {
   return (
     <header className="header">
       <span className="logo">EnGomez.Dev</span>
-
-      {/* Toggle Menu Button */}
       <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)}>
-        {menuOpen ? <FiX size={30} /> : <FiMenu size={30} />}{" "}
+        {menuOpen ? (
+          <FiX size={30} color="white" />
+        ) : (
+          <FiMenu size={30} color="white" />
+        )}{" "}
         {/* Toggle between icons */}
       </button>
 

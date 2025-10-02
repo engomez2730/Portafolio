@@ -1,0 +1,43 @@
+.main {
+  background: #0f2027;
+  background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  height: 100vh;
+  padding: 50px;
+}
+
+.main-description {
+  width: 50%;
+}
+
+.main-photo {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-contect {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 50px;
+}
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .main-contect {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .main-description,
+  .main-photo {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
