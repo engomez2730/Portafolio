@@ -1,18 +1,12 @@
-import { Image } from "antd";
+import Imagen from "./Imagenes";
 
 const PhotoSection = () => (
   <div className="main-photo">
-    <Image
-      src="me.jpg"
-      alt="Imagen"
-      style={{
-        width: "100%",
-        maxWidth: "500px",
-        height: "auto",
-        objectFit: "cover",
-      }}
-      preview={false}
-    />
+
+      <Imagen name="data.png" maxWidth="1000px" alt="Logo JavaScript" />
+
+
+
   </div>
 );
 

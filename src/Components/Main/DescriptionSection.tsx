@@ -7,6 +7,7 @@ const ParagraphStyles = {
   color: "#FFF", // Dark gray color
   fontWeight: "100",
   textAlign: "left" as const,
+  fontFamily: "'Story Script', cursive",
 };
 
 const DescriptionSection = () => (
@@ -16,6 +17,7 @@ const DescriptionSection = () => (
         fontSize: "3.0rem",
         color: "#FFF", // Dark gray color
         fontWeight: "600",
+        fontFamily: "'Story Script', cursive",
       }}
     >
       Enderson Gómez
@@ -26,6 +28,7 @@ const DescriptionSection = () => (
       style={{
         color: "#FFF", // Dark gray color
         fontWeight: "400",
+        fontFamily: "'Story Script', cursive",
       }}
     >
       Web Developer and Data Analyst

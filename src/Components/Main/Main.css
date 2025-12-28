@@ -2,8 +2,24 @@
   background: #0f2027;
   background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
   background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
-  height: 100vh;
+  height: 90vh;
   padding: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Círculo decorativo en esquina inferior izquierda */
+.main::before {
+  content: '';
+  position: absolute;
+  bottom: -200px;
+  left: -200px;
+  width: 620px;
+  height: 500px;
+  background: #fff;
+  border-radius: 90%;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .main-description {
@@ -15,6 +31,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: crosshair;
 }
 
 .main-contect {
@@ -22,6 +39,8 @@
   flex-direction: row;
   justify-content: space-around;
   padding: 50px;
+  position: relative;
+  z-index: 2;
 }
 /* For screens smaller than 768px */
 @media (max-width: 768px) {

@@ -6,8 +6,9 @@ const Main = () => {
   return (
     <div className="main">
       <div className="main-contect">
+            <DescriptionSection />
         <PhotoSection />
-        <DescriptionSection />
+    
       </div>
     </div>
   );
