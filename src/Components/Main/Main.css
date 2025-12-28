@@ -26,6 +26,48 @@
   width: 50%;
 }
 
+.main-title {
+  font-size: 3.0rem !important;
+  color: #FFF !important;
+  font-weight: 600 !important;
+  font-family: 'Story Script', cursive !important;
+}
+
+.main-subtitle {
+  color: #FFF !important;
+  font-weight: 400 !important;
+  font-family: 'Story Script', cursive !important;
+}
+
+.main-paragraph {
+  font-size: 1.4rem !important;
+  color: #FFF !important;
+  font-weight: 100 !important;
+  text-align: left !important;
+  font-family: 'Story Script', cursive !important;
+}
+
+.main-title {
+  font-size: 3.0rem !important;
+  color: #FFF !important;
+  font-weight: 600 !important;
+  font-family: 'Story Script', cursive !important;
+}
+
+.main-subtitle {
+  color: #FFF !important;
+  font-weight: 400 !important;
+  font-family: 'Story Script', cursive !important;
+}
+
+.main-paragraph {
+  font-size: 1.4rem !important;
+  color: #FFF !important;
+  font-weight: 100 !important;
+  text-align: left !important;
+  font-family: 'Story Script', cursive !important;
+}
+
 .main-photo {
   width: 50%;
   display: flex;
@@ -73,6 +115,14 @@
     overflow-y: auto;
     padding-right: 10px;
 
+  }
+
+  .main-title {
+    font-size: 2rem !important;
+  }
+
+  .main-subtitle {
+    font-size: 1.5rem !important;
   }
 
 
