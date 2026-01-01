@@ -1,0 +1,172 @@
+.proyectos {
+  background: #0f2027;
+  background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  min-height: 100vh;
+  padding: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Círculo decorativo en esquina superior derecha */
+
+
+.proyectos-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.proyectos-title {
+  font-size: 3.5rem;
+  color: #FFF;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  margin-bottom: 60px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.proyectos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.proyecto-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.proyecto-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.proyecto-card-header {
+  background: linear-gradient(135deg, #2c5364 0%, #203a43 100%);
+  padding: 20px;
+}
+
+.proyecto-titulo {
+  font-size: 1.8rem;
+  color: #FFF;
+  font-weight: 600;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.proyecto-card-body {
+  padding: 25px;
+  flex-grow: 1;
+}
+
+.proyecto-descripcion {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.proyecto-tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.tech-tag {
+  background: linear-gradient(135deg, #2c5364 0%, #203a43 100%);
+  color: #FFF;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
+
+.proyecto-card-footer {
+  padding: 20px 25px;
+  background: rgba(243, 243, 243, 0.8);
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.proyecto-link {
+  padding: 10px 25px;
+  background: linear-gradient(135deg, #2c5364 0%, #203a43 100%);
+  color: #FFF;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+}
+
+.proyecto-link:hover {
+  background: linear-gradient(135deg, #203a43 0%, #0f2027 100%);
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .proyectos {
+    padding: 30px 15px;
+    min-height: 100vh;
+  }
+
+  .proyectos::before {
+    display: none;
+  }
+
+  .proyectos-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+
+  .proyectos-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .proyecto-titulo {
+    font-size: 1.5rem;
+  }
+
+  .proyecto-descripcion {
+    font-size: 0.95rem;
+  }
+
+  .proyecto-card-footer {
+    flex-direction: column;
+  }
+
+  .proyecto-link {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .proyectos-title {
+    font-size: 2rem;
+  }
+
+  .proyecto-card-body {
+    padding: 20px;
+  }
+
+  .tech-tag {
+    font-size: 0.8rem;
+    padding: 5px 12px;
+  }
+}

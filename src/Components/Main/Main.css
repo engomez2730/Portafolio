@@ -1,72 +1,44 @@
 .main {
   background: #0f2027;
   background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
-  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+    background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+
   height: 90vh;
   padding: 50px;
   position: relative;
   overflow: hidden;
 }
 
-/* Círculo decorativo en esquina inferior izquierda */
-.main::before {
-  content: '';
-  position: absolute;
-  bottom: -200px;
-  left: -200px;
-  width: 620px;
-  height: 500px;
-  background: #fff;
-  border-radius: 90%;
-  pointer-events: none;
-  z-index: 1;
-}
+
 
 .main-description {
   width: 50%;
 }
 
 .main-title {
-  font-size: 3.0rem !important;
+  font-size: 6.0rem !important;
   color: #FFF !important;
   font-weight: 600 !important;
-  font-family: 'Story Script', cursive !important;
+  font-family: 'Poppins', sans-serif !important;
+  text-transform: uppercase !important;
 }
 
 .main-subtitle {
   color: #FFF !important;
-  font-weight: 400 !important;
-  font-family: 'Story Script', cursive !important;
+  font-weight: bold !important;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .main-paragraph {
-  font-size: 1.4rem !important;
+ 
+  font-size: 1.8rem !important;
   color: #FFF !important;
   font-weight: 100 !important;
   text-align: left !important;
-  font-family: 'Story Script', cursive !important;
+  font-family: 'Poppins', sans-serif !important;
 }
 
-.main-title {
-  font-size: 3.0rem !important;
-  color: #FFF !important;
-  font-weight: 600 !important;
-  font-family: 'Story Script', cursive !important;
-}
 
-.main-subtitle {
-  color: #FFF !important;
-  font-weight: 400 !important;
-  font-family: 'Story Script', cursive !important;
-}
-
-.main-paragraph {
-  font-size: 1.4rem !important;
-  color: #FFF !important;
-  font-weight: 100 !important;
-  text-align: left !important;
-  font-family: 'Story Script', cursive !important;
-}
 
 .main-photo {
   width: 50%;

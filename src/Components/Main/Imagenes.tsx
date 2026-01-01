@@ -11,7 +11,7 @@ type ImagenProps = {
 
 const Imagen: React.FC<ImagenProps> = ({
   name,
-  maxWidth = "200px",
+  maxWidth,
   alt,
   className,
   style,

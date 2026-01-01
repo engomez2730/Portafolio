@@ -4,7 +4,7 @@ import PhotoSection from "./PhotoSection";
 import DescriptionSection from "./DescriptionSection";
 const Main = () => {
   return (
-    <div className="main">
+    <div id="inicio" className="main">
       <div className="main-contect">
             <DescriptionSection />
         <PhotoSection />
