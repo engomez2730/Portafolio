@@ -23,25 +23,25 @@ const Proyectos = () => {
       tecnologias: ["React", "TypeScript", "CSS"],
       imagen: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&h=400&fit=crop",
       enlace: "#",
-      github: "#"
+      github: "https://github.com/engomez2730"
     },
     {
       id: 2,
       titulo: t('projects.project2.title'),
       descripcion: t('Assesment de Seguridad para evaluar y mejorar la protección de sistemas y datos en las empresas, y asi garantizar la seguridad.'),
       tecnologias: ["Node.js", "SQL", "React"],
-      imagen: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop",
+      imagen: "./quiz.png",
       enlace: "#",
-      github: "#"
+      github: "https://github.com/engomez2730"
     },
     {
       id: 3,
       titulo: t('projects.project3.title'),
       descripcion: t('Aplicacion para capturar estadisticas de partidos de baloncesto en tiempo real para reportes de efectividad de jugadores.'),
       tecnologias: ["SQL", "Node", "React"],
-      imagen: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop",
+      imagen: "/score.png",
       enlace: "#",
-      github: "#"
+      github: "https://github.com/engomez2730"
     }
   ];
 
