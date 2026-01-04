@@ -76,25 +76,36 @@
     justify-content: center;
   }
 
-  .main-description,
+
+
   .main-photo {
+    display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  z-index: 2;
     width: 100%;
-    margin-bottom: 20px;
+    margin-top: 20px;
   }
 
   .main-description {
+
+    width: 100%;
+    margin-bottom: 20px;
     max-height: 70vh;
     overflow-y: auto;
     padding-right: 10px;
+  }
 
+  .main-paragraph {
+    font-size: 1.3rem !important;
   }
 
   .main-title {
-    font-size: 2rem !important;
+    font-size: 2.2rem !important;
   }
 
   .main-subtitle {
-    font-size: 1.5rem !important;
+    font-size: 1.0rem !important;
   }
 
 

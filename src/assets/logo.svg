@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 220 200"
+     width="220"
+     height="200">
+
+  <!-- Brand Name -->
+  <text x="110" y="38"
+        text-anchor="middle"
+        font-family="Inter, Segoe UI, Arial, sans-serif"
+        font-size="28"
+        font-weight="700"
+        fill="#0B1220">
+    EnGomezDev
+  </text>
+
+  <!-- Icon -->
+  <g transform="translate(62,60)">
+    <rect width="96" height="96" rx="20" fill="#0EA5E9"/>
+
+    <!-- Left bracket -->
+    <path d="M36 32 L24 48 L36 64"
+          stroke="#0B1220"
+          stroke-width="7"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+
+    <!-- Right bracket -->
+    <path d="M60 32 L72 48 L60 64"
+          stroke="#0B1220"
+          stroke-width="7"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+
+    <!-- Slash -->
+    <line x1="48" y1="28" x2="52" y2="68"
+          stroke="#0B1220"
+          stroke-width="7"
+          stroke-linecap="round"/>
+  </g>
+
+</svg>

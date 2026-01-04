@@ -22,7 +22,13 @@
 .logo-certificado {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
+  line-height: 1;
+}
+
+.logo-certificado svg {
+  vertical-align: middle;
+  margin-top: -2px;
 }
 
 /* ---- NAVIGATION STYLES ---- */
@@ -67,8 +73,22 @@
 
 /* ---- MOBILE MENU STYLES ---- */
 @media (max-width: 768px) {
+  .header {
+    padding: 20px 30px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .logo-certificado {
+    flex-shrink: 0;
+    z-index: 999;
+  }
+
   .menu-btn {
     display: block; /* Show on mobile */
+    flex-shrink: 0;
   }
 
   .nav-menu {
