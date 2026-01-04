@@ -23,13 +23,13 @@ export default function Footer() {
           <div className="footer-section">
             <h3 className="footer-title">{t('footer.follow')}</h3>
             <div className="footer-social">
-              <a href="https://github.com/tuusuario" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <a href="https://github.com/engomez2730" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <FaGithub />
               </a>
-              <a href="https://linkedin.com/in/tuusuario" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/engomez2730/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <FaLinkedin />
               </a>
-              <a href="mailto:tu@email.com" aria-label="Email">
+              <a href="engomezdev@gmail.com" aria-label="Email">
                 <FaEnvelope />
               </a>
             </div>
