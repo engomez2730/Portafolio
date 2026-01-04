@@ -1,10 +1,14 @@
 import "./Contacto.css";
 import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp, FaCheckCircle, FaTimesCircle, FaPhone } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useLanguage } from "../../contexts/LanguageContext";
 
 const Contacto = () => {
   const { t } = useLanguage();
+  const form = useRef<HTMLFormElement>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState({ type: '', text: '' });
+  
   const [disponibilidad, setDisponibilidad] = useState({
     freelancer: true,
     tiempoCompleto: false
@@ -15,6 +19,46 @@ const Contacto = () => {
       ...prev,
       [tipo]: !prev[tipo]
     }));
+  };
+
+  const sendEmail = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setMessage({ type: '', text: '' });
+
+    if (form.current) {
+      const formData = new FormData(form.current);
+      
+      try {
+        const response = await fetch('https://formspree.io/f/mlgdokvq', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          setMessage({ 
+            type: 'success', 
+            text: t('contact.form.success') || 'Message sent successfully!' 
+          });
+          form.current.reset();
+        } else {
+          setMessage({ 
+            type: 'error', 
+            text: t('contact.form.error') || 'Failed to send message. Please try again.' 
+          });
+        }
+      } catch (error) {
+        setMessage({ 
+          type: 'error', 
+          text: t('contact.form.error') || 'Failed to send message. Please try again.' 
+        });
+      } finally {
+        setIsLoading(false);
+      }
+    }
   };
 
   return (
@@ -59,22 +103,22 @@ const Contacto = () => {
             </div>
             
             <div className="contacto-links">
-              <a href="mailto:tu@email.com" className="contacto-link" target="_blank" rel="noopener noreferrer">
+              <a href="engomezdev@gmail.com" className="contacto-link" target="_blank" rel="noopener noreferrer">
                 <FaEnvelope className="contacto-icon" />
                 <span>tu@email.com</span>
               </a>
               
-              <a href="https://github.com/tuusuario" className="contacto-link" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/engomez2730" className="contacto-link" target="_blank" rel="noopener noreferrer">
                 <FaGithub className="contacto-icon" />
                 <span>GitHub</span>
               </a>
               
-              <a href="https://linkedin.com/in/tuusuario" className="contacto-link" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/engomez2730/" className="contacto-link" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin className="contacto-icon" />
                 <span>LinkedIn</span>
               </a>
               
-              <a href="https://wa.me/1234567890" className="contacto-link" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/18293959249" className="contacto-link" target="_blank" rel="noopener noreferrer">
                 <FaWhatsapp className="contacto-icon" />
                 <span>WhatsApp</span>
               </a>
@@ -82,15 +126,21 @@ const Contacto = () => {
           </div>
 
           <div className="contacto-form-wrapper">
-            <form className="contacto-form">
+            {message.text && (
+              <div className={`form-message ${message.type}`}>
+                {message.text}
+              </div>
+            )}
+            <form ref={form} onSubmit={sendEmail} className="contacto-form">
               <div className="form-group">
                 <label htmlFor="nombre">{t('contact.form.name')}</label>
                 <input 
                   type="text" 
                   id="nombre" 
-                  name="nombre" 
+                  name="name" 
                   placeholder={t('contact.form.namePlaceholder')}
                   required 
+                  disabled={isLoading}
                 />
               </div>
 
@@ -102,6 +152,7 @@ const Contacto = () => {
                   name="email" 
                   placeholder={t('contact.form.emailPlaceholder')}
                   required 
+                  disabled={isLoading}
                 />
               </div>
 
@@ -110,9 +161,10 @@ const Contacto = () => {
                 <input 
                   type="text" 
                   id="asunto" 
-                  name="asunto" 
+                  name="subject" 
                   placeholder={t('contact.form.subjectPlaceholder')}
                   required 
+                  disabled={isLoading}
                 />
               </div>
 
@@ -120,15 +172,16 @@ const Contacto = () => {
                 <label htmlFor="mensaje">{t('contact.form.message')}</label>
                 <textarea 
                   id="mensaje" 
-                  name="mensaje" 
+                  name="message" 
                   rows={6}
                   placeholder={t('contact.form.messagePlaceholder')}
                   required
+                  disabled={isLoading}
                 />
               </div>
 
-              <button type="submit" className="form-submit">
-                {t('contact.form.submit')}
+              <button type="submit" className="form-submit" disabled={isLoading}>
+                {isLoading ? (t('contact.form.sending') || 'Sending...') : t('contact.form.submit')}
               </button>
             </form>
           </div>

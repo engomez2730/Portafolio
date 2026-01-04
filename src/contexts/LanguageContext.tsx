@@ -53,6 +53,9 @@ export const translations = {
     'contact.form.message': 'Mensaje',
     'contact.form.messagePlaceholder': 'Tu mensaje...',
     'contact.form.submit': 'Enviar Mensaje',
+    'contact.form.sending': 'Enviando...',
+    'contact.form.success': '¡Mensaje enviado con éxito!',
+    'contact.form.error': 'Error al enviar el mensaje. Por favor intenta de nuevo.',
     
     // Footer
     'footer.about': 'Sobre Mí',
@@ -109,6 +112,9 @@ export const translations = {
     'contact.form.message': 'Message',
     'contact.form.messagePlaceholder': 'Your message...',
     'contact.form.submit': 'Send Message',
+    'contact.form.sending': 'Sending...',
+    'contact.form.success': 'Message sent successfully!',
+    'contact.form.error': 'Failed to send message. Please try again.',
     
     // Footer
     'footer.about': 'About Me',
