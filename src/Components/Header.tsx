@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi"; // Import hamburger & close icons
+import { FiMenu, FiX } from "react-icons/fi";
+import { useLanguage } from "../contexts/LanguageContext";
 import "./Header.css";
 import Imagen from "./Main/Imagenes";
 
 const Header = function () {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <header className="header">
@@ -19,16 +21,15 @@ const Header = function () {
           <FiX size={30} color="white" />
         ) : (
           <FiMenu size={30} color="white" />
-        )}{" "}
-        {/* Toggle between icons */}
+        )}
       </button>
 
       {/* Navigation Menu */}
       <nav className={`nav-menu ${menuOpen ? "open" : ""}`}>
         <ul className="nav-links">
-          <li onClick={() => setMenuOpen(false)}><a href="#inicio">Inicio</a></li>
-          <li onClick={() => setMenuOpen(false)}><a href="#proyectos">Proyectos</a></li>
-          <li onClick={() => setMenuOpen(false)}><a href="#contacto">Contacto</a></li>
+          <li onClick={() => setMenuOpen(false)}><a href="#inicio">{t('nav.home')}</a></li>
+          <li onClick={() => setMenuOpen(false)}><a href="#proyectos">{t('nav.projects')}</a></li>
+          <li onClick={() => setMenuOpen(false)}><a href="#contacto">{t('nav.contact')}</a></li>
         </ul>
       </nav>
     </header>

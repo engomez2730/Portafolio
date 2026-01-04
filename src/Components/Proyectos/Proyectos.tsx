@@ -1,4 +1,6 @@
 import "./Proyectos.css";
+import { FaFolderOpen } from "react-icons/fa";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 interface Proyecto {
   id: number;
@@ -11,28 +13,33 @@ interface Proyecto {
 }
 
 const Proyectos = () => {
+  const { t } = useLanguage();
+
   const proyectos: Proyecto[] = [
     {
       id: 1,
-      titulo: "Proyecto 1",
-      descripcion: "Descripción del proyecto 1. Una aplicación web moderna y responsive.",
+      titulo: t('Vendify'),
+      descripcion: t('Punto de venta desarrollado para facilitar las transacciones comerciales y la gestión de inventarios en tiendas físicas.'),
       tecnologias: ["React", "TypeScript", "CSS"],
+      imagen: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&h=400&fit=crop",
       enlace: "#",
       github: "#"
     },
     {
       id: 2,
-      titulo: "Proyecto 2",
-      descripcion: "Descripción del proyecto 2. Sistema completo de gestión.",
-      tecnologias: ["Node.js", "Express", "MongoDB"],
+      titulo: t('projects.project2.title'),
+      descripcion: t('Assesment de Seguridad para evaluar y mejorar la protección de sistemas y datos en las empresas, y asi garantizar la seguridad.'),
+      tecnologias: ["Node.js", "SQL", "React"],
+      imagen: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop",
       enlace: "#",
       github: "#"
     },
     {
       id: 3,
-      titulo: "Proyecto 3",
-      descripcion: "Descripción del proyecto 3. Aplicación móvil innovadora.",
-      tecnologias: ["React Native", "Firebase", "Redux"],
+      titulo: t('projects.project3.title'),
+      descripcion: t('Aplicacion para capturar estadisticas de partidos de baloncesto en tiempo real para reportes de efectividad de jugadores.'),
+      tecnologias: ["SQL", "Node", "React"],
+      imagen: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop",
       enlace: "#",
       github: "#"
     }
@@ -41,10 +48,20 @@ const Proyectos = () => {
   return (
     <div id="proyectos" className="proyectos">
       <div className="proyectos-container">
-        <h2 className="proyectos-title">Mis Proyectos</h2>
+        <h2 className="proyectos-title">
+          <FaFolderOpen className="title-icon" /> {t('projects.title')}
+        </h2>
         <div className="proyectos-grid">
           {proyectos.map((proyecto) => (
-            <div key={proyecto.id} className="proyecto-card">
+            <div 
+              key={proyecto.id} 
+              className="proyecto-card"
+            >
+              {proyecto.imagen && (
+                <div className="proyecto-imagen-container">
+                  <img src={proyecto.imagen} alt={proyecto.titulo} className="proyecto-imagen" />
+                </div>
+              )}
               <div className="proyecto-card-header">
                 <h3 className="proyecto-titulo">{proyecto.titulo}</h3>
               </div>
@@ -52,7 +69,10 @@ const Proyectos = () => {
                 <p className="proyecto-descripcion">{proyecto.descripcion}</p>
                 <div className="proyecto-tecnologias">
                   {proyecto.tecnologias.map((tech, index) => (
-                    <span key={index} className="tech-tag">
+                    <span 
+                      key={index} 
+                      className={`tech-tag ${tech.toLowerCase().replace(/\s+/g, '').replace('.js', '').replace('js', '')}`}
+                    >
                       {tech}
                     </span>
                   ))}
@@ -61,12 +81,12 @@ const Proyectos = () => {
               <div className="proyecto-card-footer">
                 {proyecto.enlace && (
                   <a href={proyecto.enlace} className="proyecto-link" target="_blank" rel="noopener noreferrer">
-                    Ver Proyecto
+                    {t('projects.viewProject')}
                   </a>
                 )}
                 {proyecto.github && (
                   <a href={proyecto.github} className="proyecto-link" target="_blank" rel="noopener noreferrer">
-                    GitHub
+                    {t('projects.github')}
                   </a>
                 )}
               </div>

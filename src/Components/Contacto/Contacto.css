@@ -38,6 +38,24 @@
   text-align: center;
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.contacto-title .title-icon {
+  font-size: 3rem;
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .contacto-subtitle {
@@ -69,15 +87,69 @@
   color: #2c5364;
   font-weight: 600;
   font-family: 'Poppins', sans-serif;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
-.info-text {
-  font-size: 1.1rem;
-  color: #333;
-  line-height: 1.8;
+/* Sección de Disponibilidad */
+.disponibilidad-section {
   margin-bottom: 30px;
+}
+
+.disponibilidad-title {
+  font-size: 1.3rem;
+  color: #2c5364;
+  font-weight: 600;
   font-family: 'Poppins', sans-serif;
+  margin-bottom: 15px;
+}
+
+.disponibilidad-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.disponibilidad-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.disponibilidad-item:hover {
+  transform: translateX(5px);
+}
+
+.disponibilidad-item.disponible {
+  background: #d4edda;
+  color: #155724;
+  border-color: #28a745;
+}
+
+.disponibilidad-item.no-disponible {
+  background: #f8d7da;
+  color: #721c24;
+  border-color: #dc3545;
+}
+
+.disponibilidad-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.disponibilidad-icon.check {
+  color: #28a745;
+}
+
+.disponibilidad-icon.times {
+  color: #dc3545;
 }
 
 .contacto-links {
@@ -220,8 +292,17 @@
     font-size: 1.6rem;
   }
 
-  .info-text {
-    font-size: 1rem;
+  .disponibilidad-title {
+    font-size: 1.1rem;
+  }
+
+  .disponibilidad-item {
+    font-size: 0.95rem;
+    padding: 12px 15px;
+  }
+
+  .disponibilidad-icon {
+    font-size: 1.2rem;
   }
 
   .contacto-link {

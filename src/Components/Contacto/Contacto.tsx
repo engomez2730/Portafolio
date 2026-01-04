@@ -1,20 +1,62 @@
 import "./Contacto.css";
-import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp, FaCheckCircle, FaTimesCircle, FaPhone } from "react-icons/fa";
+import { useState } from "react";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 const Contacto = () => {
+  const { t } = useLanguage();
+  const [disponibilidad, setDisponibilidad] = useState({
+    freelancer: true,
+    tiempoCompleto: false
+  });
+
+  const toggleDisponibilidad = (tipo: 'freelancer' | 'tiempoCompleto') => {
+    setDisponibilidad(prev => ({
+      ...prev,
+      [tipo]: !prev[tipo]
+    }));
+  };
+
   return (
     <div id="contacto" className="contacto">
       <div className="contacto-container">
-        <h2 className="contacto-title">Contacto</h2>
-        <p className="contacto-subtitle">¿Tienes un proyecto en mente? ¡Hablemos!</p>
+        <h2 className="contacto-title">
+          <FaPhone className="title-icon" /> {t('contact.title')}
+        </h2>
+        <p className="contacto-subtitle">{t('contact.subtitle')}</p>
         
         <div className="contacto-content">
           <div className="contacto-info">
-            <h3 className="info-title">Información de Contacto</h3>
-            <p className="info-text">
-              Estoy disponible para trabajar en proyectos freelance o a tiempo completo.
-              No dudes en contactarme.
-            </p>
+            <h3 className="info-title">{t('contact.infoTitle')}</h3>
+            
+            <div className="disponibilidad-section">
+              <h4 className="disponibilidad-title">{t('contact.availability')}</h4>
+              <div className="disponibilidad-items">
+                <div 
+                  className={`disponibilidad-item ${disponibilidad.freelancer ? 'disponible' : 'no-disponible'}`}
+                  onClick={() => toggleDisponibilidad('freelancer')}
+                >
+                  {disponibilidad.freelancer ? (
+                    <FaCheckCircle className="disponibilidad-icon check" />
+                  ) : (
+                    <FaTimesCircle className="disponibilidad-icon times" />
+                  )}
+                  <span>{t('contact.freelancer')}</span>
+                </div>
+                
+                <div 
+                  className={`disponibilidad-item ${disponibilidad.tiempoCompleto ? 'disponible' : 'no-disponible'}`}
+                  onClick={() => toggleDisponibilidad('tiempoCompleto')}
+                >
+                  {disponibilidad.tiempoCompleto ? (
+                    <FaCheckCircle className="disponibilidad-icon check" />
+                  ) : (
+                    <FaTimesCircle className="disponibilidad-icon times" />
+                  )}
+                  <span>{t('contact.fullTime')}</span>
+                </div>
+              </div>
+            </div>
             
             <div className="contacto-links">
               <a href="mailto:tu@email.com" className="contacto-link" target="_blank" rel="noopener noreferrer">
@@ -42,51 +84,51 @@ const Contacto = () => {
           <div className="contacto-form-wrapper">
             <form className="contacto-form">
               <div className="form-group">
-                <label htmlFor="nombre">Nombre</label>
+                <label htmlFor="nombre">{t('contact.form.name')}</label>
                 <input 
                   type="text" 
                   id="nombre" 
                   name="nombre" 
-                  placeholder="Tu nombre"
+                  placeholder={t('contact.form.namePlaceholder')}
                   required 
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">{t('contact.form.email')}</label>
                 <input 
                   type="email" 
                   id="email" 
                   name="email" 
-                  placeholder="tu@email.com"
+                  placeholder={t('contact.form.emailPlaceholder')}
                   required 
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="asunto">Asunto</label>
+                <label htmlFor="asunto">{t('contact.form.subject')}</label>
                 <input 
                   type="text" 
                   id="asunto" 
                   name="asunto" 
-                  placeholder="Asunto del mensaje"
+                  placeholder={t('contact.form.subjectPlaceholder')}
                   required 
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="mensaje">Mensaje</label>
+                <label htmlFor="mensaje">{t('contact.form.message')}</label>
                 <textarea 
                   id="mensaje" 
                   name="mensaje" 
                   rows={6}
-                  placeholder="Tu mensaje..."
+                  placeholder={t('contact.form.messagePlaceholder')}
                   required
                 />
               </div>
 
               <button type="submit" className="form-submit">
-                Enviar Mensaje
+                {t('contact.form.submit')}
               </button>
             </form>
           </div>

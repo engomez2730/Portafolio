@@ -1,7 +1,6 @@
 .proyectos {
   background: #0f2027;
-  background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
-  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  background: -webkit-linear-gradient(to right, #2c5364, #5baeca, #0f2027);
   min-height: 100vh;
   padding: 50px;
   position: relative;
@@ -9,7 +8,19 @@
 }
 
 /* Círculo decorativo en esquina superior derecha */
-
+.proyectos::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  left: -200px;
+  width: 420px;
+  height: 400px;
+  background: #fff;
+  border-radius: 90%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.1;
+}
 
 .proyectos-container {
   position: relative;
@@ -26,6 +37,24 @@
   text-align: center;
   margin-bottom: 60px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.proyectos-title .title-icon {
+  font-size: 3rem;
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .proyectos-grid {
@@ -48,6 +77,24 @@
 .proyecto-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.proyecto-imagen-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.proyecto-imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.proyecto-card:hover .proyecto-imagen {
+  transform: scale(1.1);
 }
 
 .proyecto-card-header {
@@ -91,7 +138,138 @@
   font-size: 0.85rem;
   font-weight: 500;
   font-family: 'Poppins', sans-serif;
+  transition: transform 0.2s ease;
 }
+
+.tech-tag:hover {
+  transform: translateY(-2px);
+}
+
+/* Technology-specific colors */
+.tech-tag.react {
+  background: linear-gradient(135deg, #61dafb 0%, #21a1c4 100%);
+  color: #000;
+}
+
+.tech-tag.typescript {
+  background: linear-gradient(135deg, #3178c6 0%, #235a97 100%);
+  color: #FFF;
+}
+
+.tech-tag.javascript {
+  background: linear-gradient(135deg, #f7df1e 0%, #e3c815 100%);
+  color: #000;
+}
+
+.tech-tag.css {
+  background: linear-gradient(135deg, #264de4 0%, #1e3db5 100%);
+  color: #FFF;
+}
+
+.tech-tag.html {
+  background: linear-gradient(135deg, #e34f26 0%, #c4401f 100%);
+  color: #FFF;
+}
+
+.tech-tag.nodejs,
+.tech-tag.node {
+  background: linear-gradient(135deg, #68a063 0%, #4d7c47 100%);
+  color: #FFF;
+}
+
+.tech-tag.express {
+  background: linear-gradient(135deg, #000000 0%, #333333 100%);
+  color: #FFF;
+}
+
+.tech-tag.mongodb {
+  background: linear-gradient(135deg, #4db33d 0%, #3d8b2f 100%);
+  color: #FFF;
+}
+
+.tech-tag.postgresql,
+.tech-tag.postgres {
+  background: linear-gradient(135deg, #336791 0%, #2a5475 100%);
+  color: #FFF;
+}
+
+.tech-tag.mysql {
+  background: linear-gradient(135deg, #00758f 0%, #005e73 100%);
+  color: #FFF;
+}
+
+.tech-tag.firebase {
+  background: linear-gradient(135deg, #ffca28 0%, #ffa000 100%);
+  color: #000;
+}
+
+.tech-tag.redux {
+  background: linear-gradient(135deg, #764abc 0%, #5e3a94 100%);
+  color: #FFF;
+}
+
+.tech-tag.vue {
+  background: linear-gradient(135deg, #42b883 0%, #35495e 100%);
+  color: #FFF;
+}
+
+.tech-tag.angular {
+  background: linear-gradient(135deg, #dd0031 0%, #c3002f 100%);
+  color: #FFF;
+}
+
+.tech-tag.python {
+  background: linear-gradient(135deg, #3776ab 0%, #ffd43b 100%);
+  color: #FFF;
+}
+
+.tech-tag.java {
+  background: linear-gradient(135deg, #007396 0%, #005a7a 100%);
+  color: #FFF;
+}
+
+.tech-tag.php {
+  background: linear-gradient(135deg, #777bb4 0%, #5d5d8d 100%);
+  color: #FFF;
+}
+
+.tech-tag.tailwind {
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  color: #FFF;
+}
+
+.tech-tag.bootstrap {
+  background: linear-gradient(135deg, #7952b3 0%, #5c3d99 100%);
+  color: #FFF;
+}
+
+.tech-tag.sass,
+.tech-tag.scss {
+  background: linear-gradient(135deg, #cc6699 0%, #b35580 100%);
+  color: #FFF;
+}
+
+.tech-tag.git {
+  background: linear-gradient(135deg, #f05032 0%, #c63d24 100%);
+  color: #FFF;
+}
+
+.tech-tag.docker {
+  background: linear-gradient(135deg, #2496ed 0%, #1a7cc6 100%);
+  color: #FFF;
+}
+
+.tech-tag.graphql {
+  background: linear-gradient(135deg, #e10098 0%, #b8007a 100%);
+  color: #FFF;
+}
+
+.tech-tag.nextjs,
+.tech-tag.next {
+  background: linear-gradient(135deg, #000000 0%, #333333 100%);
+  color: #FFF;
+}
+
 
 .proyecto-card-footer {
   padding: 20px 25px;
